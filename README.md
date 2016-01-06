@@ -120,9 +120,7 @@ Open your browser and start tailing logs!
     Usage: rtail-server [OPTIONS]
 
     Options:
-    --udp-host, --uh  The listening UDP hostname            [default: "127.0.0.1"]
     --udp-port, --up  The listening UDP port                       [default: 9999]
-    --web-host, --wh  The listening HTTP hostname           [default: "127.0.0.1"]
     --web-port, --wp  The listening HTTP port                      [default: 8888]
     --web-version     Define web app version to serve                     [string]
     --help, -h        Show help                                          [boolean]
