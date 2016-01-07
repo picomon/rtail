@@ -40,12 +40,12 @@ let argv = yargs
   .example('rtail-server --web-version 0.1.3', 'Use webapp v0.1.3')
   .option('udp-port', {
     alias: 'up',
-    default: 9999,
+    default: 19999,
     describe: 'The listening UDP port'
   })
   .option('web-port', {
     alias: 'wp',
-    default: 8888,
+    default: 18888,
     describe: 'The listening HTTP port'
   })
   .option('web-version', {
