@@ -38,24 +38,14 @@ let argv = yargs
   .example('rtail-server --web-version stable', 'Always uses latest stable webapp')
   .example('rtail-server --web-version unstable', 'Always uses latest develop webapp')
   .example('rtail-server --web-version 0.1.3', 'Use webapp v0.1.3')
-  .option('udp-host', {
-    alias: 'uh',
-    default: '127.0.0.1',
-    describe: 'The listening UDP hostname'
-  })
   .option('udp-port', {
     alias: 'up',
-    default: 9999,
+    default: 19999,
     describe: 'The listening UDP port'
-  })
-  .option('web-host', {
-    alias: 'wh',
-    default: '127.0.0.1',
-    describe: 'The listening HTTP hostname'
   })
   .option('web-port', {
     alias: 'wp',
-    default: 8888,
+    default: 18888,
     describe: 'The listening HTTP port'
   })
   .option('web-version', {
@@ -137,8 +127,11 @@ if (!argv.webVersion) {
  * listen!
  */
 io.attach(http, { serveClient: false })
-socket.bind(argv.udpPort, argv.udpHost)
-http.listen(argv.webPort, argv.webHost)
+//socket.bind(argv.udpPort, argv.udpHost)
+//http.listen(argv.webPort, argv.webHost)
+socket.bind(argv.udpPort)
+http.listen(argv.webPort)
 
-debug('UDP  server listening: %s:%s', argv.udpHost, argv.udpPort)
-debug('HTTP server listening: http://%s:%s', argv.webHost, argv.webPort)
+debug('UDP  server listening: :%s', argv.udpPort)
+debug('HTTP server listening: :%s', argv.webPort)
+
